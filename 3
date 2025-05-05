@@ -1,0 +1,61 @@
+#Write a program which repeatedly reads integers until the user enters “done”
+num = 0
+total = 0
+
+while True:
+    abc = input("Enter a number or done: ")
+    if abc == "done":
+        break
+    try:
+        bcd = float(abc)
+    except:
+        print("Invalid input")
+        continue
+
+    num = num + 1
+    total = total + 1
+
+print(total, num, total/num)
+
+
+#Write program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum
+max = None
+min = None
+
+while True:
+    abc = input("Enter a number or done: ")
+    if abc == "done":
+        break
+    try:
+        bcd = float(abc)
+    except:
+        print("Invalid input")
+        continue
+
+    if max is None or bcd > max:
+        max = bcd
+    if min is None or bcd < min:
+        min = bcd
+
+print("Maximum:", max)
+print("Minimum:", min)
+
+
+#Code up Worked Exercise 6.5
+numbers = []
+
+while True:
+    abc = input("Enter a number or done: ")
+    if abc == "done":
+        break
+    try:
+        number = float(abc)
+        numbers.append(number)
+    except ValueError:
+        print("Invalid input")
+
+if numbers:
+    print("Maximum:", max(numbers))
+    print("Minimum:", min(numbers))
+else:
+    print("No numbers were entered.")
